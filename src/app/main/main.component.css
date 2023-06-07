@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300');
+.delete-btn{
+  
+    margin-left: 10px;
+    margin-top: 10px;
+    border: none;
+    height: 30px;
+    width: 110px;
+    border-radius: 5px;
+    text-align: center;
+    background: #1e90ff;
+    color : #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: 0.2s;
+   
+    
+   
+}
+.delete-btn:hover{
+    background-color:#357bc0; 
+    transition: 0.2s;
+}
+.buttons{
+    display: flex;
+
+    
+}
+.delete{
+background-color: rgba(234, 50, 50, 0.543);
+height: 90%;
+width: 115%;
+margin-top: 8px;
+margin-left: 12px;
+
+}
+table{
+    margin-top: 15px;
+    width: 90%;
+    font-family: 'Comic Neue 300', cursive;
+}
