@@ -1,0 +1,61 @@
+
+<div class="body">
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+<h1 class="title">{{taskdata.title}}</h1>
+
+<form class="Task"  [formGroup]="TaskFormControl">
+
+  <mat-form-field >
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name" [errorStateMatcher]="matcher"
+           placeholder="Ex. Parsa" cdkFocusInitial>
+
+    <mat-error *ngIf="TaskFormControl.get('name').hasError('required')">
+      Name is <strong>required!</strong>
+    </mat-error>
+  </mat-form-field>
+
+
+
+    <mat-form-field>
+      <mat-label>status </mat-label>
+      <mat-select formControlName="status" [errorStateMatcher]="matcher" >
+        <mat-option  [value]="0">
+          Not started
+        </mat-option>
+        <mat-option  [value]="1">
+          In proggress
+        </mat-option>
+        <mat-option  [value]="2">
+          Completed
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="TaskFormControl.get('status').hasError('required')">
+        Status is <strong>required!</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+  <mat-form-field >
+    <mat-label>Priority</mat-label>
+    <input type="text" matInput formControlName="priority" [errorStateMatcher]="matcher"
+          placeholder="Ex. 5">
+    <mat-hint>(1-10) </mat-hint>
+    <mat-error *ngIf="TaskFormControl.get('priority').hasError('required')">
+      Priority is <strong>required!</strong>
+    </mat-error>
+    <mat-error *ngIf="TaskFormControl.get('priority').hasError('min')"> least value is 1</mat-error>
+    <mat-error *ngIf="TaskFormControl.get('priority').hasError('max')"> max value is 10</mat-error>
+  </mat-form-field>
+  <div class="btns">
+  <button mat-raised-button  type="submit" [disabled]="TaskFormControl.invalid" color="primary" (click)="!taskdata.id?Save():Update()">Save</button>
+  <!-- <button mat-raised-button  type="submit" [routerLink]="['/']" color="warn">cancel</button> -->
+  <!-- why this is not working -->
+</div>
+
+</form>
+
+
+</div>

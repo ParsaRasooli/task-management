@@ -1,0 +1,36 @@
+
+<form [formGroup]="addtask" (submit)="onSubmit()">
+    <div class="test">
+    <label for="Taskname">Taskname :</label>
+    <input type="text" class="textbox" placeholder="Enter Taskname" formControlName="name">
+    <div *ngIf="addtask.get('name').invalid && addtask.get('name').touched ">
+        <span class="err" >this field is required</span>
+    </div>
+</div>
+<div class="test">
+    <label for="status">status :</label>
+    <select type="number" class="textbox"  formControlName="status">
+        <option  [ngValue]= '0'>Not started</option>
+        <option  [ngValue]= '1'>in progress</option>
+        <option  [ngValue]= '2'>completed</option>
+ 
+    </select>
+    <div *ngIf="this.addtask.get('status').value == null && addtask.get('status').touched ">
+        <span class="err" >this field is required</span>
+    </div>
+</div>
+<div class="test">
+    <label for="priority">priority</label>
+    <input  type="number" class="textbox" placeholder="Enter priority" formControlName="priority">
+    <div *ngIf="addtask.get('priority').invalid && addtask.get('priority').touched ">
+        <span class="err"  *ngIf="addtask.get('priority').hasError('max')">max amount is 10</span>
+        <span class="err"  *ngIf="addtask.get('priority').hasError('required')">this field is required</span>
+        <span class="err"  *ngIf="addtask.get('priority').hasError('min')">least amount is 1</span>
+     
+    </div>
+</div>
+<div class="buts">
+<button class="sub" type="submit" [disabled]="addtask.invalid">save</button>
+<button class="cancel" type="submit" [routerLink]="['/']" >cancel</button>
+</div>
+</form>
