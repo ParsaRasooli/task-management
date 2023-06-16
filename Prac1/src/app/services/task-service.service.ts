@@ -33,7 +33,9 @@ export class TaskServiceService {
   }
 
   getbyId(id: number): Observable<TaskInfo> {
-    return this.http.get<TaskInfo>(`${enviromnet.ApiUrl}/api/Task/${id}`);
+    return this.http
+      .get<TaskInfo>(`${enviromnet.ApiUrl}/api/Task/${id}`)
+      .pipe(catchError(this.handleError));
   }
 
   add(model: TaskInfo): Observable<TaskInfo[]> {
@@ -66,11 +68,11 @@ export class TaskServiceService {
   }
   private handleError(error: HttpErrorResponse) {
     let err;
+    const notificationService =
+      Notifservice.notifinjector.get(NotificationService);
     if (error.status === 0) {
-      console.error('An error occurred:', error.error);
+      notificationService.error(error.error.messages[0]);
     } else {
-      const notificationService =
-        Notifservice.notifinjector.get(NotificationService);
       notificationService.error(error.error.messages[0]);
     }
 

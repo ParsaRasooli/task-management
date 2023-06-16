@@ -1,0 +1,19 @@
+<div class="wrapper"  [formGroup]="details">
+<form [formGroup]="details" (submit)="Proccess()">
+  <div>
+<mat-form-field>
+<input type="text" readonly matInput formControlName="name" >
+</mat-form-field>
+</div>
+<div>
+<mat-form-field>
+<input type="text" readonly matInput formControlName="status"  ></mat-form-field></div>
+<div>
+<mat-form-field>
+<input type="text" readonly matInput formControlName="priority"  ></mat-form-field></div>
+<div class="Proccess">
+<button mat-raised-button color="primary" type="submit" >Proccess</button>
+</div>
+</form>
+
+</div>

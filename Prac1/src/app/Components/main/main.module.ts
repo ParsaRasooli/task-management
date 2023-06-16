@@ -14,6 +14,11 @@ import { MatDialogActions, MatDialogModule } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
 import { TaskSelectorComponent } from '../task-selector/task-selector.component';
 import { TaskSelectorModule } from '../task-selector/task-selector.module';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MaterialModule } from 'src/app/material/material.module';
 
 @NgModule({
   declarations: [MainComponent],
@@ -28,6 +33,9 @@ import { TaskSelectorModule } from '../task-selector/task-selector.module';
     MatDialogModule,
     MatBadgeModule,
     TaskSelectorModule,
+    FormsModule,
+    MatInputModule,
+    MaterialModule,
   ],
 })
 export class MainModule {}

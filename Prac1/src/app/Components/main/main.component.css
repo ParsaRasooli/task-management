@@ -44,6 +44,11 @@ table{
 
 
 }
-
+.actions{
+  margin-left: -16px;
+}
+.priority{
+  max-width: 100px;
+}
 
 

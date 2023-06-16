@@ -30,16 +30,17 @@
         <ng-container matColumnDef="select">
           <th mat-header-cell *matHeaderCellDef>
             <mat-checkbox (change)="$event ? toggleAllRows() : null"
-                          [checked]="selection.hasValue() && isAllSelected()"
+                          [checked]="selection.hasValue() && isAllSelected()&& !Editable"
                           [indeterminate]="selection.hasValue() && !isAllSelected()"
                           [aria-label]="checkboxLabel()">
             </mat-checkbox>
           </th>
           <td mat-cell *matCellDef="let row">
             <mat-checkbox (click)="$event.stopPropagation()"
-                          (change)="$event ? selection.toggle(row) : null"
-                          [checked]="selection.isSelected(row)"
-                          [aria-label]="checkboxLabel(row)">
+                          (change)="$event  ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row) && !Editable"
+                          [aria-label]="checkboxLabel(row)"
+                          >
             </mat-checkbox>
           </td>
         </ng-container>
@@ -56,26 +57,65 @@
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="status">
+        <ng-container matColumnDef="status" class="status">
           <th mat-header-cell *matHeaderCellDef  > status </th>
-          <td mat-cell *matCellDef="let element" [ngSwitch]= "element.status">
+          <td mat-cell *matCellDef="let element" >
+
+
+              <mat-select  *ngIf="element.isedit && Editable" [(ngModel)]="element.status" >
+              <mat-option  [value]="0">
+                Not started
+              </mat-option>
+              <mat-option  [value]="1">
+                In proggress
+              </mat-option>
+              <mat-option  [value]="2">
+                Completed
+              </mat-option>
+            </mat-select>
+
+
+
+            <div *ngIf="!element.isedit" [ngSwitch]= "element.status">
             <data *ngSwitchCase="0">Not started</data>
             <data *ngSwitchCase="1">In progress</data>
             <data *ngSwitchCase="2">Completed</data>
+          </div>
+
 
          </td>
         </ng-container>
 
 
-        <ng-container matColumnDef="priority">
+        <ng-container matColumnDef="priority" class="priority">
           <th  mat-header-cell *matHeaderCellDef mat-sort-header> priority </th>
-          <td mat-cell *matCellDef="let element"> {{element.priority}} </td>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.isedit && Editable">
+              <mat-form-field>
+              <input  type="number" [(ngModel)]="element.priority" matInput max="10">
+            </mat-form-field>
+            </div>
+            <div *ngIf="!element.isedit">
+             {{element.priority}}
+            </div> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action" >
+          <th  mat-header-cell *matHeaderCellDef mat-sort-header> action </th>
+          <td mat-cell *matCellDef="let element">
+
+          <button class="actions" mat-icon-button color="primary" (click)="EditMode(element)" *ngIf="!Editable" matTooltip="Edit"><mat-icon>edit</mat-icon></button>
+          <button class="actions" mat-icon-button color="warn" (click)="Delete(element)" *ngIf="!Editable" matTooltip="Delete"><mat-icon>delete</mat-icon></button>
+          <button class="actions" mat-icon-button color="primary" *ngIf="Editable"(click)="Save(element)" mat matTooltip="Save"><mat-icon>check-circle</mat-icon></button>
+          <button class="actions" mat-icon-button color="warn" *ngIf="Editable" (click)="Cancel(element)" matTooltip="Cancel"><mat-icon>cancel</mat-icon></button>
+        </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"
             (click)="selection.toggle(row)">
         </tr>
+
       </table>
 
     </div>

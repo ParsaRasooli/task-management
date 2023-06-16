@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DetailsModule } from './details.module';
+import { TaskInfo } from 'src/app/model/Task';
 
 @Component({
   selector: 'app-details',

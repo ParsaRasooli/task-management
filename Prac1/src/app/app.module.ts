@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './Components/main/main.component';
@@ -36,6 +36,10 @@ import { TaskSelectorComponent } from './Components/task-selector/task-selector.
 import { RouterModule } from '@angular/router';
 import { GridComponent } from './Components/task-selector/grid/grid.component';
 import { MatInputModule } from '@angular/material/input';
+import { DetailsModule } from './Components/details/details.module';
+import { DetailbaseModule } from './Components/details/detailbase/detailbase.module';
+import { DetailbaseComponent } from './Components/details/detailbase/detailbase.component';
+import { MatOptionModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [AppComponent],

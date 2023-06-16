@@ -21,10 +21,12 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { EditAddComponent } from '../edit-add/edit-add.component';
 import { BehaviorSubject, switchMap } from 'rxjs';
 import { GridComponent } from '../task-selector/grid/grid.component';
+import { compileComponentFromMetadata } from '@angular/compiler';
 
 export class maincm {
   static maincminjector: Injector;
 }
+
 Injectable();
 @Component({
   selector: 'app-main',
@@ -37,10 +39,11 @@ export class MainComponent implements OnInit {
     private taskservice: TaskServiceService,
     private router: Router,
     private notif: NotificationService,
-    private matdialog: MatDialog,
-    private injector: Injector
+    private matdialog: MatDialog
   ) {}
 
+  editting: number = 0;
+  Editable: boolean = false;
   _name: string;
   _priority: number;
   _status: Number;
@@ -55,8 +58,14 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.refreshGrid();
   }
-
-  displayedColumns: string[] = ['select', 'id', 'name', 'status', 'priority'];
+  displayedColumns: string[] = [
+    'select',
+    'id',
+    'name',
+    'status',
+    'priority',
+    'action',
+  ];
 
   selection = new SelectionModel<TaskInfo>(true, []);
 
@@ -86,8 +95,9 @@ export class MainComponent implements OnInit {
       row.id + 1
     }`;
   }
+
   editbut(): void {
-    this.getrowdata();
+    this.getRowData();
     if (this.selection.selected.length === 1) {
       this.router.navigate(['add'], { queryParams: { id: this._id } });
 
@@ -96,6 +106,7 @@ export class MainComponent implements OnInit {
       this.notif.error('you need to select a row in order to edit');
     }
   }
+
   deleterow(): void {
     if (this.selection.selected.length > 0) {
       this.selection.selected.filter((obj) => {
@@ -110,7 +121,8 @@ export class MainComponent implements OnInit {
       this.notif.error('you need to select a row in order to delete it');
     }
   }
-  getrowdata(): void {
+
+  getRowData(): void {
     this.selection.selected.filter((obj) => {
       this._id = obj.id;
       this._name = obj.name;
@@ -118,30 +130,22 @@ export class MainComponent implements OnInit {
       this._priority = obj.priority;
     });
   }
-  refreshGrid(): void {
-    // const dotask = taskserviceinj.taskserviceinjetor.get(TaskServiceService);
 
+  refreshGrid(): void {
     this.taskservice.getAll().subscribe({
       next: (res) => {
+        this.taskdata = res;
         this.data = res;
         this.selection = new SelectionModel<TaskInfo>(true, []);
         this.dataSoruce = new MatTableDataSource<TaskInfo>(this.data);
-        // for (var x = 0; x > this.dataSoruce.data.length; x += 1) {
-        //   if (res.status[x] == 2) {
-        //     console.log('i was here if');
-
-        //     this.delbadgenum += 1;
-        //   } else {
-        //     console.log('else');
-        //   }
-        // }
       },
       error: (err) => {},
     });
   }
+
   OpenDialog() {
     var title = '';
-    this.getrowdata();
+    this.getRowData();
     var id = this._id;
 
     if (this.selection.selected.length > 0) {
@@ -168,8 +172,6 @@ export class MainComponent implements OnInit {
         data: { title },
       });
       popup.afterClosed().subscribe((item) => {
-        console.log(item);
-
         this.refreshGrid();
       });
     }
@@ -183,5 +185,38 @@ export class MainComponent implements OnInit {
 
   Details() {
     this.router.navigate(['/details']);
+  }
+  EditMode(item) {
+    item.isedit = true;
+    this.Editable = true;
+  }
+  Delete(item) {
+    this.taskservice.delete(item.id).subscribe({
+      next: (res) => {
+        this.notif.Succsess('task has been deleted !');
+        this.refreshGrid();
+      },
+    });
+  }
+  Cancel(item) {
+    this.taskservice.getbyId(item.id).subscribe({
+      next: (res) => {
+        item.priority = res.priority;
+        item.status = res.status;
+        item.name = res.name;
+        item.isedit = false;
+        this.Editable = false;
+      },
+    });
+  }
+  Save(item) {
+    if (item.priority > 10) this.notif.error('max value for priority is 10!');
+    else
+      this.taskservice.update(item.id, item).subscribe({
+        next: (res) => {
+          item.isedit = false;
+          this.Editable = false;
+        },
+      });
   }
 }
