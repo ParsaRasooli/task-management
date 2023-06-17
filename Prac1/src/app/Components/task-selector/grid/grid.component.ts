@@ -48,10 +48,10 @@ export class GridComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: TaskInfo
   ) {}
   ngOnInit(): void {
-    this.getdata();
+    this.getTableData();
   }
 
-  getdata() {
+  getTableData() {
     this.taskdata.getAll().subscribe({
       next: (res) => {
         this.tabledata = res;
@@ -88,8 +88,7 @@ export class GridComponent implements OnInit {
       row.id + 1
     }`;
   }
-  userselected() {}
-  Submit() {
+  submit() {
     if (this.selection.selected.length > 1) {
       this.notif.error('you can only edit 1 task at a time!');
     } else {

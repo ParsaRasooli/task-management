@@ -51,6 +51,8 @@ import { MatOptionModule } from '@angular/material/core';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     RouterModule,
+    MaterialModule,
+    FormsModule,
   ],
 
   providers: [

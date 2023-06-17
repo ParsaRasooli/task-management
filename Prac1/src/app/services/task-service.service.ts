@@ -25,10 +25,12 @@ export class TaskServiceService {
   ) {
     Notifservice.notifinjector = injector;
   }
-
-  getAll(): Observable<TaskInfo> {
+  /**
+   * get all data(type of taskinfo)
+   */
+  getAll(): Observable<TaskInfo[]> {
     return this.http
-      .get<TaskInfo>(`${enviromnet.ApiUrl}/api/task`)
+      .get<TaskInfo[]>(`${enviromnet.ApiUrl}/api/task`)
       .pipe(catchError(this.handleError));
   }
 
@@ -46,8 +48,6 @@ export class TaskServiceService {
       'Content-Type',
       'application/json'
     );
-
-    const modeljson = JSON.stringify(model);
 
     return this.http
       .post<TaskInfo[]>('http://localhost:52761/api/Task', model, httpOptions)

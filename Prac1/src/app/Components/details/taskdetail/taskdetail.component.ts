@@ -30,13 +30,18 @@ export class TaskdetailComponent implements OnInit {
     private notif: NotificationService
   ) {}
   ngOnInit(): void {
-    this.CreateForm(this.id);
+    this.createForm(this.id);
   }
-
-  Proccess() {
+  /**
+   * sends status data
+   */
+  proccess() {
     this.stats.emit(this.statusvalue);
   }
-  CreateForm(id: number) {
+  /**
+   * creates a form
+   */
+  createForm(id: number) {
     this.taskserivce.getbyId(id).subscribe({
       next: (res) => {
         this.taskdata = res;

@@ -14,27 +14,24 @@ import { MatDialogActions, MatDialogModule } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
 import { TaskSelectorComponent } from '../task-selector/task-selector.component';
 import { TaskSelectorModule } from '../task-selector/task-selector.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MaterialModule } from 'src/app/material/material.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, EditAddComponent],
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatTableModule,
-    MatIconModule,
-    MatCheckboxModule,
-    MatSortModule,
     RouterModule,
-    MatDialogModule,
-    MatBadgeModule,
     TaskSelectorModule,
     FormsModule,
-    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
     MaterialModule,
   ],
 })

@@ -17,20 +17,25 @@ export class TaskSelectorComponent implements OnInit {
   constructor(private dialog: MatDialog) {}
   data: TaskInfo[];
   test: string = 'parsa';
-  datagrid: FormGroup;
+  dataGrid: FormGroup;
+  temp;
 
   ngOnInit(): void {
-    this.datagrid = new FormGroup({ grid: new FormControl('what') });
+    this.dataGrid = new FormGroup({ grid: new FormControl() });
   }
-
-  OpenGrid() {
-    const griddialog = this.dialog
+  /**
+   * opens up taskselector dialog
+   */
+  openGrid() {
+    if (this.data) {
+      this.temp = this.data[0].id;
+    }
+    this.dialog
       .open(GridComponent, {
         width: '80%',
         height: '80%',
         enterAnimationDuration: '500ms',
-
-        data: 'sda',
+        data: this.temp,
       })
       .afterClosed()
       .subscribe((res) => {

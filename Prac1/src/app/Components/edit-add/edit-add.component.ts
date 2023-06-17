@@ -59,21 +59,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   selector: 'app-edit-add',
   templateUrl: './edit-add.component.html',
   styleUrls: ['./edit-add.component.css'],
-  standalone: true,
-  imports: [
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    NgIf,
-    MatOptionModule,
-    MatSelectModule,
-    MatIconModule,
-    MatDialogModule,
-    MatButtonModule,
-    RouterModule,
-    MatSnackBarModule,
-  ],
 })
 export class EditAddComponent implements OnInit {
   constructor(

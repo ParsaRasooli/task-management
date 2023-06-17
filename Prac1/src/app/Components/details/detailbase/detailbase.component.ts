@@ -11,32 +11,40 @@ import { TaskServiceService } from 'src/app/services/task-service.service';
 export class DetailbaseComponent implements OnInit {
   statustext: string;
   display: boolean;
-  id: TaskInfo;
+  task: TaskInfo;
   detailbaseform: FormGroup;
   constructor(private taskservice: TaskServiceService) {}
 
   ngOnInit(): void {
-    this.Form(null);
+    this.createForm(null);
   }
-  Form(id?: number) {
+  /** Create/override the form */
+  private createForm(id?: number) {
     this.detailbaseform = new FormGroup({
       id: new FormControl(id, [Validators.min(1), Validators.required]),
     });
   }
-  fetch() {
-    this.id = this.detailbaseform.value;
+  /** Fetch task data */
+  fetchTask() {
+    this.task = this.detailbaseform.value;
 
-    this.taskservice.getbyId(this.id.id).subscribe({
+    this.taskservice.getbyId(this.task.id).subscribe({
       next: (res) => {
-        if (res.id == this.id.id) this.display = true;
+        if (res.id == this.task.id) this.display = true;
         else this.display = false;
       },
     });
   }
-  add(newItem: string) {
+  /**
+   * gets value of status from other component
+   */
+  getStatusValue(newItem: string) {
     this.statustext = newItem.toString();
   }
-  change() {
+  /**
+   * hide details
+   */
+  hideDetails() {
     this.display = false;
   }
 }

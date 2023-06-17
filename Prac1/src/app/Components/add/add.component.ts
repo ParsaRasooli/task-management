@@ -39,13 +39,13 @@ export class AddComponent implements OnInit {
       this._id = params['id'];
     });
 
-    this.createform(0, '', null, null);
+    this.createForm(0, '', null, null);
 
     if (this._id > 0) {
       this.edit = true;
       this.taskservice.getbyId(this._id).subscribe({
         next: (res) => {
-          this.createform(res.id, res.name, res.status, res.priority);
+          this.createForm(res.id, res.name, res.status, res.priority);
         },
 
         error: (err) => {
@@ -54,7 +54,9 @@ export class AddComponent implements OnInit {
       });
     }
   }
-
+  /**
+   * add task on submit button
+   */
   onSubmit(): void {
     const task: TaskInfo = this.addtask.value;
     console.log(this.addtask.value);
@@ -84,7 +86,10 @@ export class AddComponent implements OnInit {
       }
     }
   }
-  createform(id: number, name: string, status: number, priority: number) {
+  /**
+   * create a taskinfo form
+   */
+  createForm(id: number, name: string, status: number, priority: number) {
     this.addtask = new FormGroup({
       id: new FormControl(id, [Validators.required]),
       name: new FormControl(name, [Validators.required]),

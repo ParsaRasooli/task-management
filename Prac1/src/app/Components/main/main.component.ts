@@ -14,7 +14,7 @@ import {
   taskserviceinj,
 } from '../../services/task-service.service';
 import { TaskInfo } from '../../model/Task';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Data, Route, Router } from '@angular/router';
 import { NotificationService } from '../../services/notification.service';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -48,12 +48,8 @@ export class MainComponent implements OnInit {
   _priority: number;
   _status: Number;
   dataSoruce: MatTableDataSource<TaskInfo>;
-  delbadgenum: number = 0;
-
   taskdata: TaskInfo;
-
   _id: number;
-  data: any;
 
   ngOnInit(): void {
     this.refreshGrid();
@@ -68,7 +64,9 @@ export class MainComponent implements OnInit {
   ];
 
   selection = new SelectionModel<TaskInfo>(true, []);
-
+  /**
+   * checks if all rows are selected
+   */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
 
@@ -76,7 +74,9 @@ export class MainComponent implements OnInit {
 
     return numSelected === numRows;
   }
-
+  /**
+   * clear or select all rows checkboxes
+   */
   toggleAllRows() {
     if (this.dataSoruce.data != undefined)
       if (this.isAllSelected()) {
@@ -86,6 +86,9 @@ export class MainComponent implements OnInit {
 
     this.selection.select(...this.dataSoruce.data);
   }
+  /**
+   * check indevisual checkboxes
+   */
 
   checkboxLabel(row?: TaskInfo): string {
     if (!row) {
@@ -95,8 +98,8 @@ export class MainComponent implements OnInit {
       row.id + 1
     }`;
   }
-
-  editbut(): void {
+  /** edit button => /add route */
+  editTaskBtn(): void {
     this.getRowData();
     if (this.selection.selected.length === 1) {
       this.router.navigate(['add'], { queryParams: { id: this._id } });
@@ -106,8 +109,10 @@ export class MainComponent implements OnInit {
       this.notif.error('you need to select a row in order to edit');
     }
   }
-
-  deleterow(): void {
+  /**
+   * delete selected rows
+   */
+  deleteRow(): void {
     if (this.selection.selected.length > 0) {
       this.selection.selected.filter((obj) => {
         this.taskservice.delete(obj.id).subscribe({
@@ -121,7 +126,9 @@ export class MainComponent implements OnInit {
       this.notif.error('you need to select a row in order to delete it');
     }
   }
-
+  /**
+   * receive seleted row data
+   */
   getRowData(): void {
     this.selection.selected.filter((obj) => {
       this._id = obj.id;
@@ -130,20 +137,22 @@ export class MainComponent implements OnInit {
       this._priority = obj.priority;
     });
   }
-
+  /**
+   * refresh the table / grid
+   */
   refreshGrid(): void {
     this.taskservice.getAll().subscribe({
       next: (res) => {
-        this.taskdata = res;
-        this.data = res;
         this.selection = new SelectionModel<TaskInfo>(true, []);
-        this.dataSoruce = new MatTableDataSource<TaskInfo>(this.data);
+        this.dataSoruce = new MatTableDataSource<TaskInfo>(res);
       },
       error: (err) => {},
     });
   }
-
-  OpenDialog() {
+  /**
+   * opens edit-add dialog component
+   */
+  openDialogEditAdd() {
     var title = '';
     this.getRowData();
     var id = this._id;
@@ -176,21 +185,29 @@ export class MainComponent implements OnInit {
       });
     }
   }
-  CloseDialog() {
-    this.matdialog.closeAll();
-  }
-  DelBtnBadge() {
+  /**
+   * checks if delete button badge shows or not
+   */
+  delBtnBadge() {
     return this.selection.selected.length > 0 ? false : true;
   }
-
-  Details() {
+  /**
+   * navigates to /details route
+   */
+  detailsBtn() {
     this.router.navigate(['/details']);
   }
-  EditMode(item) {
+  /**
+   * activate inline editing on table
+   */
+  inlineEditmode(item) {
     item.isedit = true;
     this.Editable = true;
   }
-  Delete(item) {
+  /**
+   * delete a row
+   */
+  inlineDelete(item) {
     this.taskservice.delete(item.id).subscribe({
       next: (res) => {
         this.notif.Succsess('task has been deleted !');
@@ -198,7 +215,10 @@ export class MainComponent implements OnInit {
       },
     });
   }
-  Cancel(item) {
+  /**
+   * cancel inline editing
+   */
+  inlineCancel(item) {
     this.taskservice.getbyId(item.id).subscribe({
       next: (res) => {
         item.priority = res.priority;
@@ -209,7 +229,10 @@ export class MainComponent implements OnInit {
       },
     });
   }
-  Save(item) {
+  /**
+   * update the changes on table
+   */
+  inlineSave(item) {
     if (item.priority > 10) this.notif.error('max value for priority is 10!');
     else
       this.taskservice.update(item.id, item).subscribe({
