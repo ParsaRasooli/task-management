@@ -15,10 +15,13 @@
         <td mat-cell *matCellDef="let row">
           <mat-checkbox
                         (click)= "$event.stopPropagation()"
-                        (change)=" selection.toggle(row)"
+                        (change)=" selection.toggle(row) &&row.id != data.id"
+                        [checked]=" selection.isSelected(row)||( data &&(row.id == data.id)?true:false && checkboxLabel(row))"
 
-                        [checked]=" selection.isSelected(row)||((row.id == data)?true:false && checkboxLabel(row))
-                        "
+
+
+
+
                         >
           </mat-checkbox>
         </td>

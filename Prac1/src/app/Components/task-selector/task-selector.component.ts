@@ -18,7 +18,7 @@ export class TaskSelectorComponent implements OnInit {
   data: TaskInfo[];
   test: string = 'parsa';
   dataGrid: FormGroup;
-  temp;
+  temp: TaskInfo;
 
   ngOnInit(): void {
     this.dataGrid = new FormGroup({ grid: new FormControl() });
@@ -28,7 +28,7 @@ export class TaskSelectorComponent implements OnInit {
    */
   openGrid() {
     if (this.data) {
-      this.temp = this.data[0].id;
+      this.temp = this.data[0];
     }
     this.dialog
       .open(GridComponent, {

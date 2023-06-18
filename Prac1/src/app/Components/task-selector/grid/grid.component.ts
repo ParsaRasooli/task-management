@@ -49,6 +49,10 @@ export class GridComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.getTableData();
+    if (this.data) {
+      this.selection.selected.push(this.data);
+      console.log(this.selection.selected);
+    }
   }
 
   getTableData() {
@@ -88,6 +92,7 @@ export class GridComponent implements OnInit {
       row.id + 1
     }`;
   }
+
   submit() {
     if (this.selection.selected.length > 1) {
       this.notif.error('you can only edit 1 task at a time!');

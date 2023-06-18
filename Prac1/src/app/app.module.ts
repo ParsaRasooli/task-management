@@ -40,9 +40,11 @@ import { DetailsModule } from './Components/details/details.module';
 import { DetailbaseModule } from './Components/details/detailbase/detailbase.module';
 import { DetailbaseComponent } from './Components/details/detailbase/detailbase.component';
 import { MatOptionModule } from '@angular/material/core';
+import { UppercasePipe } from './pipes/uppercase.pipe';
+import { UpperCasePipe } from '@angular/common';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UppercasePipe],
   imports: [
     BrowserModule,
     AppRoutingModule,

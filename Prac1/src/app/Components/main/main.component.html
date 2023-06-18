@@ -118,6 +118,11 @@
 
       </table>
 
+      <mat-form-field>
+        <mat-label>uppercase value </mat-label>
+        <input matInput [ngModel]="inputValue | uppercase " (ngModelChange)="inputValue = $event">
+      </mat-form-field>
+
     </div>
 
 

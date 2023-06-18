@@ -50,6 +50,7 @@ export class MainComponent implements OnInit {
   dataSoruce: MatTableDataSource<TaskInfo>;
   taskdata: TaskInfo;
   _id: number;
+  inputValue: string;
 
   ngOnInit(): void {
     this.refreshGrid();
