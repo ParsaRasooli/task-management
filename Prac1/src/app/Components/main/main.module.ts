@@ -18,15 +18,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
-
+import { MaterialModule } from 'src/app/material/material.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 import { MaterialModule } from '../../material/material.module';
 =======
 import { UppercasePipe } from 'src/app/pipes/uppercase.pipe';
 import { HoverSpanDirective } from 'src/app/directives/hover-span.directive';
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 8e4e798 (final)
 
 @NgModule({
   declarations: [MainComponent, EditAddComponent],
