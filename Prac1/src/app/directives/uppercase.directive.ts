@@ -22,7 +22,6 @@ export class UppercaseDirective {
   //   console.log(value);
   // }
 
-  /** make input value uppercase on keydown */
   @HostListener('input', ['$event'])
   onKeyDown(event: KeyboardEvent) {
     const input = event.target as HTMLInputElement;

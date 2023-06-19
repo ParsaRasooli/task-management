@@ -13,7 +13,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MaterialModule } from 'src/app/material/material.module';
 
 @NgModule({
   declarations: [TaskSelectorComponent, GridComponent],

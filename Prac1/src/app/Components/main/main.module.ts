@@ -18,9 +18,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
-import { MaterialModule } from 'src/app/material/material.module';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
   declarations: [MainComponent, EditAddComponent],
