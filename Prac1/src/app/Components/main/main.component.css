@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300');
+
+.editaddbtn:hover{
+    background-color:#357bc0;
+    transition: 0.2s;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap :6px;
+    margin-top:5px;
+    padding-top: 10px;
+}
+.delete{
+   float: right;
+   margin-top: -40px;
+   margin-bottom: 10px;
+
+}
+.editadd{
+  display: flex;
+  gap: 4px;
+
+}
+.editaddbtn{
+    margin-left: 10px;
+    border: none;
+    height: 35px;
+    width: 110px;
+    border-radius: 5px;
+    text-align: center;
+    background: #1e90ff;
+    color : #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+table{
+    margin-top: 10px;
+
+    font-family: 'Comic Neue 300', cursive;
+
+
+
+}
+.actions{
+  margin-left: -16px;
+}
+.priority{
+  max-width: 100px;
+}
+
+.spans{
+  display: flex;
+  flex-direction: column;
+}

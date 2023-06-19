@@ -1,0 +1,138 @@
+<div class="container">
+
+<div class="buttons">
+  <app-task-selector></app-task-selector>
+  <div class="editadd">
+    <div><button mat-raised-button color = "primary" class="editaddbtn"   [routerLink]="['/add']" disabled >create task</button></div>
+    <div><button  mat-raised-button color = "primary" class="editaddbtn"  (click)= "editTaskBtn()" disabled >edit task</button></div>
+    <div><button  mat-raised-button color = "primary" class="editaddbtn"  (click)= "detailsBtn()"  >details</button></div>
+
+  </div>
+
+    <div>
+
+    </div>
+    <div class="dialogbtn"> <button  mat-raised-button color="primary" (click)="openDialogEditAdd()"[innerText]="selection.hasValue()?'edit':'add'"></button></div>
+
+
+    </div>
+    <div><button matBadge= {{selection.selected.length}} matBadgePosition="after" [matBadgeHidden]="delBtnBadge()"  (click)="deleteRow()"class="delete" mat-fab color="warn" >
+      <mat-icon  >delete</mat-icon>
+    </button>
+</div>
+
+
+
+ <div>
+    <table mat-table [dataSource]="dataSoruce" class="mat-elevation-z8" matSort #empTbSort="matSort">
+
+
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                          [checked]="selection.hasValue() && isAllSelected() && !Editable"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event  ? selection.toggle(row) : null"
+                          [checked]="dataSoruce.data ? selection.isSelected(row): null && !Editable"
+                          [aria-label]="checkboxLabel(row)"
+                          >
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status" class="status">
+          <th mat-header-cell *matHeaderCellDef  > status </th>
+          <td mat-cell *matCellDef="let element" >
+
+
+              <mat-select  *ngIf="element.isedit && Editable" [(ngModel)]="element.status" >
+              <mat-option  [value]="0">
+                Not started
+              </mat-option>
+              <mat-option  [value]="1">
+                In proggress
+              </mat-option>
+              <mat-option  [value]="2">
+                Completed
+              </mat-option>
+            </mat-select>
+
+
+
+            <div *ngIf="!element.isedit" [ngSwitch]= "element.status">
+            <data *ngSwitchCase="0">Not started</data>
+            <data *ngSwitchCase="1">In progress</data>
+            <data *ngSwitchCase="2">Completed</data>
+          </div>
+
+
+         </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="priority" class="priority">
+          <th  mat-header-cell *matHeaderCellDef mat-sort-header> priority </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.isedit && Editable">
+              <mat-form-field>
+              <input  type="number" [(ngModel)]="element.priority" matInput max="10">
+            </mat-form-field>
+            </div>
+            <div *ngIf="!element.isedit">
+             {{element.priority}}
+            </div> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action" >
+          <th  mat-header-cell *matHeaderCellDef mat-sort-header> action </th>
+          <td mat-cell *matCellDef="let element">
+
+          <button class="actions" mat-icon-button color="primary" (click)="inlineEditmode(element)" *ngIf="!Editable" matTooltip="Edit"><mat-icon>edit</mat-icon></button>
+          <button class="actions" mat-icon-button color="warn" (click)="inlineDelete(element)" *ngIf="!Editable" matTooltip="Delete"><mat-icon>delete</mat-icon></button>
+          <button class="actions" mat-icon-button color="primary" *ngIf="Editable"(click)="inlineSave(element)" mat matTooltip="Save"><mat-icon>check-circle</mat-icon></button>
+          <button class="actions" mat-icon-button color="warn" *ngIf="Editable" (click)="inlineCancel(element)" matTooltip="Cancel"><mat-icon>cancel</mat-icon></button>
+        </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)">
+        </tr>
+
+      </table>
+
+
+      <mat-form-field>
+        <input type="text" matInput appUppercase>
+      </mat-form-field>
+
+      <div class="spans">
+        <span>what is up</span>
+        <span>what is up</span>
+        <span>what is up</span>
+        <span>what is up</span>
+        <span>what is up</span>
+      </div>
+
+    </div>
+
+
+
+  </div>

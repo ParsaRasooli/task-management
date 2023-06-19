@@ -1,0 +1,22 @@
+.sub{
+  margin-top: 10px;
+
+ text-align: center;
+}
+button{
+  width: 200px;
+  margin-top: 45px;
+
+}
+.mat-elevation-z8{
+  margin-top:90px ;
+
+
+  width: 50%;
+
+}
+table{
+  font-family: 'Comic Neue 300', cursive;
+  max-width: 500px;
+
+}
