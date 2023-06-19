@@ -14,12 +14,12 @@ export class HoverSpanDirective implements OnInit {
   constructor(private el: ElementRef) {}
   ngOnInit(): void {}
 
+  /**make text green on mouseenter event */
   @HostListener('mouseenter') onMouseEnter() {
     this.hover('green');
   }
+  /**make text defualt color on mouseleave event */
   @HostListener('mouseleave') onMouseLeave() {
-    // let elemet = this.el.nativeElement;
-    // elemet.setAttribute('Span', 'color', 'green');
     this.hover('');
   }
   hover(color: string) {
