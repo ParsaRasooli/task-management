@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+.body{
+  font-family: 'Handlee', cursive;
+  overflow: hidden;
+}
+.Task{
+
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+  align-items: center;
+  justify-content: center;
+
+}
+.title{
+  display: inline-block;
+ justify-content:  center;
+
+
+margin-left: 97px;
+margin-top: 55px;
+
+
+  font-family: 'Comic Neue 300', cursive;
+  color: black;
+}
+.btns{
+  display: flex;
+  gap:5px;
+}
+.btns button{
+  margin-top: 5px;
+width: 200px;
+}
+.close-button{
+  float: right;
+  justify-content: flex-end;
+
+
+}
+
+.close-icon {
+  transition: 1s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: rotate(180deg);
+}
+
+::ng-deep .icon-outside .close-button{
+  float: right;
+
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+ overflow: hidden;
+}
+.mat-error{
+  margin-left: -30px;
+}
+
+
+::ng-deep .mat-dialog-container {
+  border-radius: 20px !important;
+}

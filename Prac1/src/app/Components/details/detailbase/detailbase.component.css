@@ -1,0 +1,9 @@
+.wrapper{
+  display: flex;
+}
+button{
+margin-top: 10px;
+margin-left: 10px;
+
+}
+h2{margin-left: 20px;}
