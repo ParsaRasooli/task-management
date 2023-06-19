@@ -50,6 +50,11 @@ table{
 .priority{
   max-width: 100px;
 }
+.spans{
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+}
 
 .spans{
   display: flex;

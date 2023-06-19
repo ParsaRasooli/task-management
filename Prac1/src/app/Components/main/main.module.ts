@@ -21,7 +21,12 @@ import { MatOptionModule } from '@angular/material/core';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+<<<<<<< Updated upstream
 import { MaterialModule } from '../../material/material.module';
+=======
+import { UppercasePipe } from 'src/app/pipes/uppercase.pipe';
+import { HoverSpanDirective } from 'src/app/directives/hover-span.directive';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [MainComponent, EditAddComponent],
