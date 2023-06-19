@@ -22,7 +22,6 @@ import { EditAddComponent } from '../edit-add/edit-add.component';
 import { BehaviorSubject, switchMap } from 'rxjs';
 import { GridComponent } from '../task-selector/grid/grid.component';
 import { compileComponentFromMetadata } from '@angular/compiler';
-import { HoverSpanDirective } from 'src/app/directives/hover-span.directive';
 
 export class maincm {
   static maincminjector: Injector;
