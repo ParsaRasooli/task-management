@@ -44,16 +44,17 @@ export class MainComponent implements OnInit {
 
   editting: number = 0;
   Editable: boolean = false;
-  _name: string;
-  _priority: number;
-  _status: Number;
-  dataSoruce: MatTableDataSource<TaskInfo>;
-  taskdata: TaskInfo;
-  _id: number;
+  _name: string = '';
+  _priority: number = null;
+  _status: number = null;
+  _id: number = null;
+  taskdata: TaskInfo = { id: null, status: null, priority: null, name: '' };
+  dataSoruce: MatTableDataSource<TaskInfo> = this.taskdata[0];
 
   ngOnInit(): void {
     this.refreshGrid();
   }
+
   displayedColumns: string[] = [
     'select',
     'id',
@@ -64,13 +65,15 @@ export class MainComponent implements OnInit {
   ];
 
   selection = new SelectionModel<TaskInfo>(true, []);
+
   /**
    * checks if all rows are selected
    */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
 
-    const numRows = this.dataSoruce.data.length;
+    const numRows =
+      this.dataSoruce.data.length > 0 ? this.dataSoruce.data.length : 0;
 
     return numSelected === numRows;
   }
@@ -98,6 +101,7 @@ export class MainComponent implements OnInit {
       row.id + 1
     }`;
   }
+
   /** edit button => /add route */
   editTaskBtn(): void {
     this.getRowData();
@@ -109,6 +113,7 @@ export class MainComponent implements OnInit {
       this.notif.error('you need to select a row in order to edit');
     }
   }
+
   /**
    * delete selected rows
    */
@@ -126,6 +131,7 @@ export class MainComponent implements OnInit {
       this.notif.error('you need to select a row in order to delete it');
     }
   }
+
   /**
    * receive seleted row data
    */
@@ -137,6 +143,7 @@ export class MainComponent implements OnInit {
       this._priority = obj.priority;
     });
   }
+
   /**
    * refresh the table / grid
    */
@@ -149,6 +156,7 @@ export class MainComponent implements OnInit {
       error: (err) => {},
     });
   }
+
   /**
    * opens edit-add dialog component
    */
@@ -185,6 +193,7 @@ export class MainComponent implements OnInit {
       });
     }
   }
+
   /**
    * checks if delete button badge shows or not
    */
@@ -197,15 +206,17 @@ export class MainComponent implements OnInit {
   detailsBtn() {
     this.router.navigate(['/details']);
   }
+
   /**
    * activate inline editing on table
    */
-  inlineEditmode(item) {
+  inlineEditMode(item) {
     item.isedit = true;
     this.Editable = true;
   }
+
   /**
-   * delete a row
+   * deletes a row
    */
   inlineDelete(item) {
     this.taskservice.delete(item.id).subscribe({

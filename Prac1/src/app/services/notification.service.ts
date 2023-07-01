@@ -10,6 +10,10 @@ export class Notifservice {
 export class NotificationService {
   constructor(private toast: ToastrService) {}
 
+  /**
+   * returms a toast success
+   * @param message your message in string
+   */
   Succsess(message: string) {
     this.toast.success(message, '', {
       easing: 'ease-in',
@@ -18,7 +22,11 @@ export class NotificationService {
     });
   }
 
-  public error(message: string) {
+  /**
+   * returns a toast error
+   * @param message your error message in string
+   */
+  error(message: string) {
     this.toast.error(message, '', {
       easing: 'ease-in',
       easeTime: 500,

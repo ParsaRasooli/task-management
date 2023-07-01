@@ -1,0 +1,14 @@
+.wrapper{
+  font-family: 'Comic Neue 300', cursive;
+  border: 2px solid;
+  border-radius: 5px;
+  min-width: 400px;
+  padding: 10px;
+  margin: 20px auto;
+}
+.wrapper pre{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+}

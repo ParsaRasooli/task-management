@@ -11,7 +11,7 @@ import {
   selector: '[appUppercase]',
 })
 export class UppercaseDirective {
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor() {}
 
   //this code has a delay switching to uppercase
 

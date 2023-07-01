@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './Components/main/main.component';
+
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,24 +16,17 @@ import { TaskServiceService } from './services/task-service.service';
 import { HeadersInterceptor } from './interceptor/headers.interceptor';
 import { RouterModule } from '@angular/router';
 
-import { GridComponent } from './Components/task-selector/grid/grid.component';
-import { MatInputModule } from '@angular/material/input';
-import { DetailsModule } from './Components/details/details.module';
-import { DetailbaseModule } from './Components/details/detailbase/detailbase.module';
-import { DetailbaseComponent } from './Components/details/detailbase/detailbase.component';
-import { MatOptionModule } from '@angular/material/core';
 import { HoverSpanDirective } from './directives/hover-span.directive';
 
 import { UppercaseDirective } from './directives/uppercase.directive';
 import { UppercasePipe } from './pipes/uppercase.pipe';
+import { PriorityPipe } from './pipes/priority.pipe';
+import { TaskinfoComponent } from './Components/tasknavigation/taskinfo/taskinfo.component';
+import { TasknavigationComponent } from './Components/tasknavigation/tasknavigation.component';
+import { StatusPipe } from './pipes/status.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UppercasePipe,
-    HoverSpanDirective,
-    UppercaseDirective,
-  ],
+  declarations: [AppComponent, UppercasePipe],
 
   imports: [
     BrowserModule,
@@ -47,12 +40,11 @@ import { UppercasePipe } from './pipes/uppercase.pipe';
     FormsModule,
   ],
 
-  exports: [HoverSpanDirective, UppercaseDirective],
+  exports: [],
 
   providers: [
     TaskServiceService,
     NotificationService,
-    MainComponent,
 
     { provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true },
     { provide: MatDialogRef, useValue: {} },

@@ -1,0 +1,15 @@
+.taskinfo{
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+cdk-virtual-scroll-viewport {
+  height: 90vh;
+  max-width: 500px;
+  justify-self: center;
+  left :35%;
+  margin-top: 20px;
+
+}

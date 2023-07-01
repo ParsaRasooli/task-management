@@ -1,0 +1,13 @@
+
+<div class="wrapper">
+  <div class="searchbar">
+  <mat-form-field >
+    <span matPrefix> </span>
+    <input type="tel" matInput placeholder="Search" name= "search" [(ngModel)]= "searchValue  ">
+    <button matSuffix mat-button (click)="onSearchBtn()"><mat-icon >search</mat-icon></button>
+  </mat-form-field>
+</div>
+<div class="content">
+<ng-content></ng-content>
+</div>
+</div>

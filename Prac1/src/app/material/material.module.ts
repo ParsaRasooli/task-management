@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // Material Form Controls
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -85,8 +85,10 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatOptionModule,
     MatSortModule,
+    MatTableModule,
   ],
   exports: [
+    MatTableModule,
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,

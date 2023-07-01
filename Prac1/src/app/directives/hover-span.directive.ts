@@ -18,10 +18,12 @@ export class HoverSpanDirective implements OnInit {
     this.hover('green');
   }
   @HostListener('mouseleave') onMouseLeave() {
-    // let elemet = this.el.nativeElement;
-    // elemet.setAttribute('Span', 'color', 'green');
     this.hover('');
   }
+  /**
+   * changes the element color to desired color
+   * @param color
+   */
   hover(color: string) {
     this.el.nativeElement.style.color = color;
   }

@@ -27,10 +27,10 @@ export class AddComponent implements OnInit {
     private router: Router,
     private activatedroute: ActivatedRoute
   ) {}
-  _id: number;
+  _id: number = 0;
   addtask: FormGroup;
 
-  edit;
+  edit: boolean = false;
 
   ngOnInit(): void {
     this.edit = false;

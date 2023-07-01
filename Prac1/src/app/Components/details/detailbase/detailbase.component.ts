@@ -4,7 +4,7 @@ import { TaskInfo } from 'src/app/model/Task';
 import { TaskServiceService } from 'src/app/services/task-service.service';
 
 @Component({
-  selector: 'app-detailbase',
+  selector: 'detailbase',
   templateUrl: './detailbase.component.html',
   styleUrls: ['./detailbase.component.css'],
 })

@@ -6,6 +6,7 @@
     <div><button mat-raised-button color = "primary" class="editaddbtn"   [routerLink]="['/add']" disabled >create task</button></div>
     <div><button  mat-raised-button color = "primary" class="editaddbtn"  (click)= "editTaskBtn()" disabled >edit task</button></div>
     <div><button  mat-raised-button color = "primary" class="editaddbtn"  (click)= "detailsBtn()"  >details</button></div>
+    <div><button  mat-raised-button color = "primary" class="editaddbtn"  [routerLink]="['/navigation']"  >navigation</button></div>
 
   </div>
 
@@ -96,7 +97,7 @@
             </mat-form-field>
             </div>
             <div *ngIf="!element.isedit">
-             {{element.priority}}
+             {{element.priority }}
             </div> </td>
         </ng-container>
 
@@ -104,7 +105,7 @@
           <th  mat-header-cell *matHeaderCellDef mat-sort-header> action </th>
           <td mat-cell *matCellDef="let element">
 
-          <button class="actions" mat-icon-button color="primary" (click)="inlineEditmode(element)" *ngIf="!Editable" matTooltip="Edit"><mat-icon>edit</mat-icon></button>
+          <button class="actions" mat-icon-button color="primary" (click)="inlineEditMode(element)" *ngIf="!Editable" matTooltip="Edit"><mat-icon>edit</mat-icon></button>
           <button class="actions" mat-icon-button color="warn" (click)="inlineDelete(element)" *ngIf="!Editable" matTooltip="Delete"><mat-icon>delete</mat-icon></button>
           <button class="actions" mat-icon-button color="primary" *ngIf="Editable"(click)="inlineSave(element)" mat matTooltip="Save"><mat-icon>check-circle</mat-icon></button>
           <button class="actions" mat-icon-button color="warn" *ngIf="Editable" (click)="inlineCancel(element)" matTooltip="Cancel"><mat-icon>cancel</mat-icon></button>
@@ -130,15 +131,8 @@
         <span>what is up</span>
         <span>what is up</span>
         <span>what is up</span>
+
       </div>
-=======
-    <div class="spans" >  <span HoverSpan >what is up</span>
-      <span HoverSpan >what is up </span>
-      <span HoverSpan >what is up</span>
-      <span HoverSpan >what is up</span>
-      <span HoverSpan >what is up</span>
-    </div>
->>>>>>> Stashed changes
 
     </div>
 

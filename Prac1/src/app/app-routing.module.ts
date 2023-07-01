@@ -6,8 +6,25 @@ import { DetailsComponent } from './Components/details/details.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'add', component: AddComponent },
-  { path: 'details', component: DetailsComponent },
+  {
+    path: 'add',
+    loadChildren: () =>
+      import('./Components/add/add.module').then((m) => m.AddModule),
+  },
+  {
+    path: 'details',
+    loadChildren: () =>
+      import('./Components/details/details.module').then(
+        (m) => m.DetailsModule
+      ),
+  },
+  {
+    path: 'navigation',
+    loadChildren: () =>
+      import('./Components/tasknavigation/tasknavigation.module').then(
+        (m) => m.TasknavigationModule
+      ),
+  },
 ];
 
 @NgModule({
