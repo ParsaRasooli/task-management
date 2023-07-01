@@ -8,7 +8,7 @@ import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
   declarations: [DetailsComponent],
-  imports: [DetailsRoutingModule, DetailbaseModule, MaterialModule],
+  imports: [DetailbaseModule, MaterialModule],
   exports: [DetailsComponent],
 })
 export class DetailsModule {}
