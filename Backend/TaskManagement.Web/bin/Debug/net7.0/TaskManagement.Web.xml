@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TaskManagement.Web</name>
+    </assembly>
+    <members>
+        <member name="T:TaskManagement.Web.Controllers.BaseController">
+            <summary>
+            Base class for all repositories
+            </summary>
+        </member>
+        <member name="M:TaskManagement.Web.Controllers.BaseController.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            constructor with HttpContext
+            </summary>
+        </member>
+        <member name="M:TaskManagement.Web.Controllers.BaseController.GetAcceptLanguages">
+            <summary>
+            Get current language from http header
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TaskManagement.Web.Controllers.TaskController">
+            <summary>
+            An api controller for task operations
+            </summary>
+        </member>
+        <member name="M:TaskManagement.Web.Controllers.TaskController.#ctor(TaskManagement.Interface.IRepository{TaskManagement.Domain.Model.Task},Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            TaskController provides task operations
+            </summary>
+            <param name="taskRepository"></param>
+            <param name="httpContextAccessor"></param>
+        </member>
+        <member name="M:TaskManagement.Web.Controllers.TaskController.Get">
+            <summary>
+            Get all tasks from repository
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TaskManagement.Web.Controllers.TaskController.Get(System.Int32)">
+            <summary>
+            Get an task from repository by id
+            </summary>
+            <param name="id">id is a number value and used for searching in repository</param>
+            <returns>return value is an task object</returns>
+        </member>
+        <member name="M:TaskManagement.Web.Controllers.TaskController.Post(TaskManagement.Domain.Model.Task)">
+            <summary>
+            Post an task object and Saved it in repository
+            </summary>
+            <param name="task">An task object</param>
+            <returns>Return value is a request result such as BadRequest,OK,...</returns>
+        </member>
+        <member name="M:TaskManagement.Web.Controllers.TaskController.Put(System.Int32,TaskManagement.Domain.Model.Task)">
+            <summary>
+            Put an task object and modified it in repository 
+            </summary>
+            <param name="id">id is a number value and used for modifiying in repository</param>
+            <param name="task">An task object</param>
+            <returns></returns>
+        </member>
+        <member name="M:TaskManagement.Web.Controllers.TaskController.Delete(System.Int32)">
+            <summary>
+            Delete an task by id
+            </summary>
+            <param name="id">id is a number value and used for deleteing in repository</param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskManagement.Web.Program">
+            <summary>
+            Program class
+            </summary>
+        </member>
+        <member name="M:TaskManagement.Web.Program.Main(System.String[])">
+            <summary>
+            Main method
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:TaskManagement.Web.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            CreateWebHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TaskManagement.Web.Startup">
+            <summary>
+            Startup of app
+            </summary>
+        </member>
+        <member name="M:TaskManagement.Web.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup method
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:TaskManagement.Web.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:TaskManagement.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>

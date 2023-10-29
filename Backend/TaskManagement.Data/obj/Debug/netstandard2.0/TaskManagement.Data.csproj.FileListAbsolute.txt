@@ -1,0 +1,14 @@
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\obj\Debug\netstandard2.0\TaskManagement.Data.csprojAssemblyReference.cache
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\obj\Debug\netstandard2.0\TaskManagement.Data.AssemblyInfoInputs.cache
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\obj\Debug\netstandard2.0\TaskManagement.Data.AssemblyInfo.cs
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\bin\Debug\netstandard2.0\TaskManagement.Data.deps.json
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\bin\Debug\netstandard2.0\TaskManagement.Data.dll
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\bin\Debug\netstandard2.0\TaskManagement.Data.pdb
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\bin\Debug\netstandard2.0\TaskManagement.Domain.dll
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\bin\Debug\netstandard2.0\TaskManagement.Domain.pdb
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\bin\Debug\netstandard2.0\de\TaskManagement.Domain.resources.dll
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\obj\Debug\netstandard2.0\TaskManagement.Data.csproj.CopyComplete
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\obj\Debug\netstandard2.0\TaskManagement.Data.dll
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Data\obj\Debug\netstandard2.0\TaskManagement.Data.pdb
+J:\Hann\TaskManagement\TaskManagement.Data\obj\Debug\netstandard2.0\TaskManagement.Data.dll
+J:\Hann\TaskManagement\TaskManagement.Data\obj\Debug\netstandard2.0\TaskManagement.Data.pdb

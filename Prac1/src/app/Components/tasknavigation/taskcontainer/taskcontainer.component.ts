@@ -36,9 +36,6 @@ export class TaskcontainerComponent implements OnInit {
     // this.tasks.forEach((s) => console.log(s.tasks.id));
     // console.log(this.tasks.find((w) => w.tasks.id == 1)); //Q : why array is empty ?
     // console.log(this.tasks['_results'][this.searchValue]); //empty
-    console.log(this.tasks.length);
-    console.log(this.tasks);
-
     this.tasks.changes.subscribe((c) => {
       c.toArray().forEach((item) => {
         this.heightMap.set(

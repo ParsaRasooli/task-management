@@ -15,15 +15,8 @@ import { MaterialModule } from './material/material.module';
 import { TaskServiceService } from './services/task-service.service';
 import { HeadersInterceptor } from './interceptor/headers.interceptor';
 import { RouterModule } from '@angular/router';
-
-import { HoverSpanDirective } from './directives/hover-span.directive';
-
-import { UppercaseDirective } from './directives/uppercase.directive';
 import { UppercasePipe } from './pipes/uppercase.pipe';
-import { PriorityPipe } from './pipes/priority.pipe';
-import { TaskinfoComponent } from './Components/tasknavigation/taskinfo/taskinfo.component';
-import { TasknavigationComponent } from './Components/tasknavigation/tasknavigation.component';
-import { StatusPipe } from './pipes/status.pipe';
+
 
 @NgModule({
   declarations: [AppComponent, UppercasePipe],

@@ -1,9 +1,10 @@
 
 <div class="wrapper">
+  <button routerLink="/" mat-raised-button color="warn" style="float: left; text-align: center; margin-bottom: 5px; width: 70px;"><mat-icon>arrow_left_alt</mat-icon></button>
   <div class="searchbar">
   <mat-form-field >
     <span matPrefix> </span>
-    <input type="tel" matInput placeholder="Search" name= "search" [(ngModel)]= "searchValue  ">
+    <input type="tel" matInput placeholder=" Search task id" name= "search" [(ngModel)]= "searchValue  ">
     <button matSuffix mat-button (click)="onSearchBtn()"><mat-icon >search</mat-icon></button>
   </mat-form-field>
 </div>

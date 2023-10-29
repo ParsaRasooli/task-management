@@ -1,0 +1,12 @@
+J:\Hann\TaskManagement\TaskManagement.Data\bin\Release\netstandard2.1\TaskManagement.Data.deps.json
+J:\Hann\TaskManagement\TaskManagement.Data\bin\Release\netstandard2.1\TaskManagement.Data.dll
+J:\Hann\TaskManagement\TaskManagement.Data\bin\Release\netstandard2.1\TaskManagement.Data.pdb
+J:\Hann\TaskManagement\TaskManagement.Data\bin\Release\netstandard2.1\TaskManagement.Domain.dll
+J:\Hann\TaskManagement\TaskManagement.Data\bin\Release\netstandard2.1\TaskManagement.Domain.pdb
+J:\Hann\TaskManagement\TaskManagement.Data\bin\Release\netstandard2.1\de\TaskManagement.Domain.resources.dll
+J:\Hann\TaskManagement\TaskManagement.Data\obj\Release\netstandard2.1\TaskManagement.Data.csprojAssemblyReference.cache
+J:\Hann\TaskManagement\TaskManagement.Data\obj\Release\netstandard2.1\TaskManagement.Data.AssemblyInfoInputs.cache
+J:\Hann\TaskManagement\TaskManagement.Data\obj\Release\netstandard2.1\TaskManagement.Data.AssemblyInfo.cs
+J:\Hann\TaskManagement\TaskManagement.Data\obj\Release\netstandard2.1\TaskManagement.Data.csproj.CopyComplete
+J:\Hann\TaskManagement\TaskManagement.Data\obj\Release\netstandard2.1\TaskManagement.Data.dll
+J:\Hann\TaskManagement\TaskManagement.Data\obj\Release\netstandard2.1\TaskManagement.Data.pdb

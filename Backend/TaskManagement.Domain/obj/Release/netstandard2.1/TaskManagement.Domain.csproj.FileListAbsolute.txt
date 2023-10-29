@@ -1,0 +1,13 @@
+J:\Hann\TaskManagement\TaskManagement.Domain\bin\Release\netstandard2.1\TaskManagement.Domain.deps.json
+J:\Hann\TaskManagement\TaskManagement.Domain\bin\Release\netstandard2.1\TaskManagement.Domain.dll
+J:\Hann\TaskManagement\TaskManagement.Domain\bin\Release\netstandard2.1\TaskManagement.Domain.pdb
+J:\Hann\TaskManagement\TaskManagement.Domain\bin\Release\netstandard2.1\de\TaskManagement.Domain.resources.dll
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\TaskManagement.Domain.csprojAssemblyReference.cache
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\TaskManagement.Domain.Resource.Strings.resources
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\TaskManagement.Domain.Resource.Strings.de.resources
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\TaskManagement.Domain.csproj.GenerateResource.cache
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\TaskManagement.Domain.AssemblyInfoInputs.cache
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\TaskManagement.Domain.AssemblyInfo.cs
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\de\TaskManagement.Domain.resources.dll
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\TaskManagement.Domain.dll
+J:\Hann\TaskManagement\TaskManagement.Domain\obj\Release\netstandard2.1\TaskManagement.Domain.pdb

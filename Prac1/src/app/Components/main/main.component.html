@@ -1,11 +1,10 @@
 <div class="container">
 
 <div class="buttons">
-  <app-task-selector></app-task-selector>
+ 
   <div class="editadd">
-    <div><button mat-raised-button color = "primary" class="editaddbtn"   [routerLink]="['/add']" disabled >create task</button></div>
-    <div><button  mat-raised-button color = "primary" class="editaddbtn"  (click)= "editTaskBtn()" disabled >edit task</button></div>
-    <div><button  mat-raised-button color = "primary" class="editaddbtn"  (click)= "detailsBtn()"  >details</button></div>
+
+    <div><button  mat-raised-button color = "primary" class="editaddbtn"  (click)= "detailsBtn()" disabled >details</button></div>
     <div><button  mat-raised-button color = "primary" class="editaddbtn"  [routerLink]="['/navigation']"  >navigation</button></div>
 
   </div>
@@ -25,7 +24,7 @@
 
 
  <div>
-    <table mat-table [dataSource]="dataSoruce" class="mat-elevation-z8" matSort #empTbSort="matSort">
+    <table mat-table [dataSource]="dataSoruce  " class="mat-elevation-z8" matSort #empTbSort="matSort">
 
 
         <ng-container matColumnDef="select">
@@ -75,17 +74,25 @@
               </mat-option>
             </mat-select>
 
-
-
             <div *ngIf="!element.isedit" [ngSwitch]= "element.status">
-            <data *ngSwitchCase="0">Not started</data>
-            <data *ngSwitchCase="1">In progress</data>
-            <data *ngSwitchCase="2">Completed</data>
+            <!-- <data *ngSwitchCase="0">Not started</data> -->
+           
+              <mat-chip-option  *ngSwitchCase="0" [selectable]="false" selected  [color]="'accent'" >
+             not started
+              </mat-chip-option>
+           
+              <mat-chip-option  *ngSwitchCase="1" [selectable]="false" selected  [color]="'warn'" >
+                in progress
+                </mat-chip-option>
+
+             <mat-chip-option  *ngSwitchCase="2" [selectable]="false" selected  [color]="'primary'" >
+              Completed
+              </mat-chip-option>
           </div>
 
 
          </td>
-        </ng-container>
+        </ng-container> 
 
 
         <ng-container matColumnDef="priority" class="priority">
@@ -97,10 +104,9 @@
             </mat-form-field>
             </div>
             <div *ngIf="!element.isedit">
-             {{element.priority }}
+             {{element.priority | priority }}
             </div> </td>
         </ng-container>
-
         <ng-container matColumnDef="action" >
           <th  mat-header-cell *matHeaderCellDef mat-sort-header> action </th>
           <td mat-cell *matCellDef="let element">
@@ -118,21 +124,11 @@
         </tr>
 
       </table>
-
-
-      <mat-form-field>
-        <input type="text" matInput appUppercase>
-      </mat-form-field>
-
-<<<<<<< Updated upstream
-      <div class="spans">
-        <span>what is up</span>
-        <span>what is up</span>
-        <span>what is up</span>
-        <span>what is up</span>
-        <span>what is up</span>
-
-      </div>
+     
+      <mat-paginator style="display: flex; justify-content: center; padding-top: 10px;" [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements">
+</mat-paginator>
 
     </div>
 

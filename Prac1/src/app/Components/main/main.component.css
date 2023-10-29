@@ -38,11 +38,9 @@
 }
 table{
     margin-top: 10px;
-
     font-family: 'Comic Neue 300', cursive;
-
-
-
+    width: 100%;
+    
 }
 .actions{
   margin-left: -16px;
@@ -59,4 +57,7 @@ table{
 .spans{
   display: flex;
   flex-direction: column;
+}
+.container{
+  font-family: 'Comic Neue 300',cursive;
 }

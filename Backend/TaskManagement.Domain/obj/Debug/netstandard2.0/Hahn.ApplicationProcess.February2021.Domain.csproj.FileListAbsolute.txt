@@ -1,0 +1,13 @@
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\bin\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.deps.json
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\bin\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.dll
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\bin\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.pdb
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\bin\Debug\netstandard2.0\de\Hahn.ApplicationProcess.February2021.Domain.resources.dll
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.Resource.Strings.resources
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.Resource.Strings.de.resources
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.csproj.GenerateResource.cache
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.AssemblyInfoInputs.cache
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.AssemblyInfo.cs
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\de\Hahn.ApplicationProcess.February2021.Domain.resources.dll
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.dll
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.pdb
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Domain\obj\Debug\netstandard2.0\Hahn.ApplicationProcess.February2021.Domain.csprojAssemblyReference.cache

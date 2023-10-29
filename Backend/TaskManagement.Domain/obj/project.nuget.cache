@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "U5OSzR3AMn+upGNQxTqVwqfSUGdXRQNf64rI21+ZkwE44vbfRqA0X9sVTw5jmY5+XiNPE5at/0Xx78s2qeEnjA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\parsa\\OneDrive\\Desktop\\TaskManagement-10-25-2021\\TaskManagement.Domain\\TaskManagement.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\parsa\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -25,22 +25,31 @@ export class TaskServiceService {
   ) {
     Notifservice.notifinjector = injector;
   }
+  $tasks = this.getAll();
   /**
-   * get all data(type of taskinfo)
+   * get all tasks
    */
   getAll(): Observable<TaskInfo[]> {
     return this.http
       .get<TaskInfo[]>(`${enviromnet.ApiUrl}/api/task`)
       .pipe(catchError(this.handleError));
   }
-
+  /**
+   * 
+   * @param id taskId is required 
+   * @returns Task object
+   */
   getbyId(id: number): Observable<TaskInfo> {
     return this.http
       .get<TaskInfo>(`${enviromnet.ApiUrl}/api/Task/${id}`)
       .pipe(catchError(this.handleError));
   }
-
-  add(model: TaskInfo): Observable<TaskInfo[]> {
+/**
+ * 
+ * @param single task
+ * @returns 
+ */
+  add(task: TaskInfo): Observable<TaskInfo[]> {
     let httpOptions = {
       headers: new HttpHeaders(),
     };
@@ -50,7 +59,7 @@ export class TaskServiceService {
     );
 
     return this.http
-      .post<TaskInfo[]>('http://localhost:52761/api/Task', model, httpOptions)
+      .post<TaskInfo[]>(`${enviromnet.ApiUrl}/api/Task/`, task, httpOptions)
       .pipe(catchError(this.handleError));
   }
 

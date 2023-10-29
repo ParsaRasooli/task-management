@@ -17,26 +17,16 @@ import {
   FormGroup,
 } from '@angular/forms';
 import { ErrorStateMatcher, MatOptionModule } from '@angular/material/core';
-import { NgIf } from '@angular/common';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
 import {
   MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogModule,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterModule } from '@angular/router';
 import {
   TaskServiceService,
   taskserviceinj,
 } from '../../services/task-service.service';
 import { NotificationService } from '../../services/notification.service';
-import { MainComponent, maincm } from '../main/main.component';
-import { inject } from '@angular/core/testing';
 import { TaskInfo } from '../../model/Task';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
@@ -119,8 +109,6 @@ export class EditAddComponent implements OnInit {
       .update(this.taskdata.id, this.TaskFormControl.value)
       .subscribe({
         next: (res) => {
-          console.log(res);
-          console.log(this.taskdata.id);
           // this.notif.Succsess('task has been updated successfully!');
           this.snack.open('Task has been updated successfully!', 'close');
           this.ref.close('sup');

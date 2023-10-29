@@ -1,11 +1,23 @@
 
 <div class="wrapper">
-<pre>
-  task id : {{tasks.id}}
-  task name : {{tasks.name}}
-  Priority :{{tasks.priority | priority }}
-  Status :  {{tasks.status | status}}
-</pre>
+<mat-card>
+  <div>task id : {{tasks.id}}</div>
+  <div > task name : {{tasks.name}}</div>
+  <div > Priority :{{tasks.priority | priority }}</div>
+  <div > Status :  {{tasks.status | status}}</div>
+  <div class="btns">
+    <div> 
+       <button mat-raised-button color="accent">
+      <mat-icon>delete</mat-icon>
+      Delete
+    </button>
+  </div>
+    <div>
+        <button mat-raised-button color="primary">
+      <mat-icon>edit</mat-icon>
+      edit
+    </button> 
+    </div>
+  </div>
+</mat-card>
 </div>
-
-

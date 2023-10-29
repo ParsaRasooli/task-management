@@ -1,5 +1,5 @@
 
-<cdk-virtual-scroll-viewport [itemSize]="tasks.length">
+<cdk-virtual-scroll-viewport [itemSize]="tasks.length" >
 <app-taskcontainer>
 <app-taskinfo
  class="taskinfo" *cdkVirtualFor="let task of tasks" [tasks]="task" >

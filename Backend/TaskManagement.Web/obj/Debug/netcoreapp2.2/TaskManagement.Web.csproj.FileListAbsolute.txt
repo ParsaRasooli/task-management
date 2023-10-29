@@ -1,0 +1,4 @@
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Web\obj\Debug\netcoreapp2.2\TaskManagement.Web.csprojAssemblyReference.cache
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Web\obj\Debug\netcoreapp2.2\TaskManagement.Web.csproj.CoreCompileInputs.cache
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Web\obj\Debug\netcoreapp2.2\TaskManagement.Web.AssemblyInfoInputs.cache
+J:\Hann\Hahn.ApplicationProcess.Application\Hahn.ApplicationProcess.February2021.Web\obj\Debug\netcoreapp2.2\TaskManagement.Web.AssemblyInfo.cs

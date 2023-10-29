@@ -8,9 +8,9 @@ import { TaskSelectorModule } from '../task-selector/task-selector.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PriorityPipe } from 'src/app/pipes/priority.pipe';
 import { UppercaseDirective } from 'src/app/directives/uppercase.directive';
 import { HoverSpanDirective } from 'src/app/directives/hover-span.directive';
+import { SharedModule } from 'src/app/shared/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { HoverSpanDirective } from 'src/app/directives/hover-span.directive';
     EditAddComponent,
     HoverSpanDirective,
     UppercaseDirective,
+    
   ],
   imports: [
     CommonModule,
@@ -28,9 +29,11 @@ import { HoverSpanDirective } from 'src/app/directives/hover-span.directive';
     ReactiveFormsModule,
     RouterModule,
     MaterialModule,
+    SharedModule,
 
     BrowserAnimationsModule,
   ],
+  exports:[],
   providers: [MainComponent],
 })
 export class MainModule {}

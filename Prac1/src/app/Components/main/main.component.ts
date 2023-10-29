@@ -3,25 +3,22 @@ import {
   Injectable,
   Injector,
   OnInit,
-  TemplateRef,
-  ViewChild,
-  ViewContainerRef,
+  ViewChild
 } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import {
-  TaskServiceService,
-  taskserviceinj,
+  TaskServiceService
 } from '../../services/task-service.service';
 import { TaskInfo } from '../../model/Task';
-import { ActivatedRoute, Data, Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { NotificationService } from '../../services/notification.service';
-import { MatSort, Sort } from '@angular/material/sort';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { EditAddComponent } from '../edit-add/edit-add.component';
 import { BehaviorSubject, switchMap } from 'rxjs';
-import { GridComponent } from '../task-selector/grid/grid.component';
-import { compileComponentFromMetadata } from '@angular/compiler';
+import {MatChipsModule} from '@angular/material/chips';
+import { MatPaginator } from '@angular/material/paginator';
+
 
 export class maincm {
   static maincminjector: Injector;
@@ -41,6 +38,7 @@ export class MainComponent implements OnInit {
     private notif: NotificationService,
     private matdialog: MatDialog
   ) {}
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   editting: number = 0;
   Editable: boolean = false;
@@ -50,9 +48,12 @@ export class MainComponent implements OnInit {
   _id: number = null;
   taskdata: TaskInfo = { id: null, status: null, priority: null, name: '' };
   dataSoruce: MatTableDataSource<TaskInfo> = this.taskdata[0];
-
+    $tasks = this.taskservice.$tasks;
   ngOnInit(): void {
     this.refreshGrid();
+  }
+  ngAfterViewInit() {
+    this.dataSoruce.paginator = this.paginator;
   }
 
   displayedColumns: string[] = [
@@ -81,7 +82,7 @@ export class MainComponent implements OnInit {
    * clear or select all rows checkboxes
    */
   toggleAllRows() {
-    if (this.dataSoruce.data != undefined)
+    if (this.dataSoruce?.data != undefined)
       if (this.isAllSelected()) {
         this.selection.clear();
         return;
@@ -152,6 +153,7 @@ export class MainComponent implements OnInit {
       next: (res) => {
         this.selection = new SelectionModel<TaskInfo>(true, []);
         this.dataSoruce = new MatTableDataSource<TaskInfo>(res);
+        this.dataSoruce.paginator = this.paginator;
       },
       error: (err) => {},
     });

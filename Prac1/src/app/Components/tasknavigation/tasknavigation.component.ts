@@ -1,20 +1,15 @@
 import { ViewportScroller } from '@angular/common';
 import {
   Component,
-  OnInit,
-  OnChanges,
   ViewChild,
-  ElementRef,
   AfterViewInit,
-  ContentChild,
   Injectable,
 } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { TaskInfo } from 'src/app/model/Task';
 import { TaskServiceService } from 'src/app/services/task-service.service';
-import { TaskinfoComponent } from './taskinfo/taskinfo.component';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
-import { TaskcontainerComponent } from './taskcontainer/taskcontainer.component';
+
 Injectable();
 @Component({
   selector: 'app-tasknavigation',
